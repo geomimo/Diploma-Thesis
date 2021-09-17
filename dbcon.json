@@ -1,0 +1,9 @@
+{
+    "username": "postgres",
+    "pswd": "62251626a",
+    "host": "localhost",
+    "port": 5432,
+    "db": "ais2018db",
+    "query": "SELECT ais_data_sea.* FROM ais_data_sea INNER JOIN saronic ON ST_WITHIN(ais_data_sea.geom, saronic.geom) WHERE speed <= 2",
+    "__COMMENT__": "!!! TABLE MUST HAVE THE FOLLOWING COLUMNS: (mmsi, t, speed, geom). t is timestamp in ms, geom POINT geometry in crs 4326 !!!"
+}
