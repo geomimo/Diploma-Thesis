@@ -1,6 +1,6 @@
 {
-    "username": "postgres",
-    "pswd": "62251626a",
+    "username": "<username>",
+    "pswd": "<password>",
     "host": "localhost",
     "port": 5432,
     "db": "ais2018db",
