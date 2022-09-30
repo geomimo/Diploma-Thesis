@@ -45,7 +45,7 @@ STHS follows the same rationale, but the second clustering, `v_clustering` is re
 
 Once `g_clustering` finishes, each cluster midpoint and its cardinality are calculated. Then, using the same rolling window method, the $G^*_i$ is calculated considering cardinality as the characteristic attribute. *Getis-Ord* $G^*_i$ requires the spatial weight between two clusters. For the spatio-temporal dimensions, we have defined the *Inverse Distance Weighting (IDW)* as:
 
-$$w_{K_{xa}, K_{yb}} = {m \over e^{\lparen z+1 \rparenφ\lparen K_{xa}, K_{yb}\rparen
+$$ w_{K_{xa}, K_{yb}} = {m \over e^{\lparen z+1 \rparenφ\lparen K_{xa}, K_{yb}\rparen $$
 
 where $K_{xa}, K_{yb}$ anchorages from timeslices $x$ and $y$, $z=\lvert x-y \rvert$ the distance of the timeslices and $φ$ a spatial distane function. $m$ is related to scale.
 
