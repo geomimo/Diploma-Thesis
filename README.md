@@ -41,15 +41,15 @@ The choice of the clustering algorithms is free; however, they are associated wi
 
 ### Spatio-Temporal Hot Spots (STHS)
 
-STHS follows the same rationale, but the second clustering, `v_clustering` is replaced with hot spot analysis using *Getis-Ord* $G^*_i$[^3]. It differentiates itself from STC since it considers the cardinality of the clusters. STC aggregates this information into a single centroid without paying attention to the evolution of cardinality. For example, a long-term anchorage can be a hot spot if there is high cardinality for a couple of consecutive timeslices. There is spatial autocorrelation due to the stationarity of the cluster, and temporal autocorrelation due to the consistently high cardinality. Also, after some timeslices, the same anchorage can be a cold spot when the number of vessels declines.
+STHS follows the same rationale, but the second clustering, `v_clustering` is replaced with hot spot analysis using *Getis-Ord* $G^\*_i$[^3]. It differentiates itself from STC since it considers the cardinality of the clusters. STC aggregates this information into a single centroid without paying attention to the evolution of cardinality. For example, a long-term anchorage can be a hot spot if there is high cardinality for a couple of consecutive timeslices. There is spatial autocorrelation due to the stationarity of the cluster, and temporal autocorrelation due to the consistently high cardinality. Also, after some timeslices, the same anchorage can be a cold spot when the number of vessels declines.
 
-Once `g_clustering` finishes, each cluster midpoint and its cardinality are calculated. Then, using the same rolling window method, the $G^*_i$ is calculated considering cardinality as the characteristic attribute. *Getis-Ord* $G^*_i$ requires the spatial weight between two clusters. For the spatio-temporal dimensions, we have defined the *Inverse Distance Weighting (IDW)* as:
+Once `g_clustering` finishes, each cluster midpoint and its cardinality are calculated. Then, using the same rolling window method, the *Getis-Ord* $G^\*_i$ is calculated considering cardinality as the characteristic attribute. *Getis-Ord* $G^\*_i$ requires the spatial weight between two clusters. For the spatio-temporal dimensions, we have defined the *Inverse Distance Weighting (IDW)* as:
 
-$$ w_{K_{xa}, K_{yb}} = {m \over e^{\lparen z+1 \rparenφ\lparen K_{xa}, K_{yb}\rparen $$
+$$w_{K_{xa}, K_{yb}} = {m \over e^{\lparen z+1 \rparenφ\lparen K_{xa}, K_{yb}\rparen}}$$
 
 where $K_{xa}, K_{yb}$ anchorages from timeslices $x$ and $y$, $z=\lvert x-y \rvert$ the distance of the timeslices and $φ$ a spatial distane function. $m$ is related to scale.
 
-The clusters are characterized as `Hot`, `Cold` spots, or `None` based on the *G^\*^i* value and the sign of the *z-scores*.
+The clusters are characterized as `Hot`, `Cold` spots, or `None` based on the *Getis-Ord* $G^*_i$ value and the sign of the *z-scores*.
 
 ## Keywords
 
